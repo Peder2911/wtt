@@ -1,0 +1,5 @@
+# THIS IS AN EXAMPLE FILE
+- filetype: .py
+  call: python3 {file}
+- filetype: .Rmd
+  call: Rscript -e rmarkdown::render('{file}')
