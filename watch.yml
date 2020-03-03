@@ -3,3 +3,9 @@
   call: python3 {file}
 - filetype: .Rmd
   call: Rscript -e rmarkdown::render('{file}')
+- filetype: .md
+  call: pandoc --filter pandoc-citeproc {file} -o {file}.pdf 
+- filetype: .R
+  call: Rscript {file} 
+- filetype: .go
+  call: go run {file}
