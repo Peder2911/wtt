@@ -24,9 +24,9 @@ def watchthis(dir=".",config=os.path.expanduser("~/.wtt.yaml")):
 
         for e in config:
             if ext == e["filetype"]:
-                call = e["call"].format(file=filepath).split()
-                subprocess.call("clear")
-                subprocess.call(call)
+                call = e["call"].format(file=filepath)
+                os.system("clear")
+                os.system(call)
 
 
 if __name__ == "__main__":
