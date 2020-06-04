@@ -5,7 +5,7 @@ import fire
 import yaml
 import os
 import subprocess
-
+import re
 
 def watchthis(dir=".",config=os.path.expanduser("~/.wtt.yaml")):
 
@@ -23,9 +23,9 @@ def watchthis(dir=".",config=os.path.expanduser("~/.wtt.yaml")):
         _, ext = os.path.splitext(filepath)
 
         for e in config:
-            if ext == e["filetype"]:
+            if re.search(ext, e["filetype"]):
                 call = e["call"].format(file=filepath)
-                os.system("clear")
+                #os.system("clear")
                 os.system(call)
 
 
